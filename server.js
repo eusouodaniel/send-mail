@@ -8,6 +8,10 @@ const server = express();
 server.use(bodyParser.json());
 server.use(cors());
 
+server.get('/', (req, res) {
+    return res.json({'status': "Welcome send-mail api"});
+});
+
 server.post('/send-mail', async function (req, res) {
     const transporter = createConnect();
 
